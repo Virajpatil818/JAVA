@@ -9,36 +9,60 @@ public class complex {
 		complex_op cal = new complex_op();
 		
 		Scanner input= new Scanner(System.in);
-		System.out.println("Enter First Number :");
-		num1 = input.nextFloat();
-		num2 = input.nextFloat();
-		complex_op object1 = new complex_op(num1,num2);
-		System.out.println("Enter Second Number :");
-		num1 = input.nextFloat();
-		num2 = input.nextFloat();
-		complex_op object2 = new complex_op(num1,num2);
+	
 		
 		do {
-			System.out.println("1.Addition \n2.Substraction \n3.Multiplication \n4.Division");
+			System.out.println("1.Addition \n2.Subtraction \n3.Multiplication \n4.Division");
 			choice = input.nextInt();
 			
 			switch(choice) {
 			case 1:
+				System.out.println("Enter First Number :");
+				num1 = input.nextFloat();
+				num2 = input.nextFloat();
+				complex_op object1 = new complex_op(num1,num2);
+				System.out.println("Enter Second Number :");
+				num1 = input.nextFloat();
+				num2 = input.nextFloat();
+				complex_op object2 = new complex_op(num1,num2);
 				cal.Addition(object1,object2);
 				break;
 			case 2:
-				cal.Subtraction(object1,object2);
+				System.out.println("Enter First Number :");
+				num1 = input.nextFloat();
+				num2 = input.nextFloat();
+				complex_op object3 = new complex_op(num1,num2);
+				System.out.println("Enter Second Number :");
+				num1 = input.nextFloat();
+				num2 = input.nextFloat();
+				complex_op object4 = new complex_op(num1,num2);
+				cal.Subtraction(object3,object4);
 				break;
 			case 3:
-				cal.Multiplication(object1,object2);
+				System.out.println("Enter First Number :");
+				num1 = input.nextFloat();
+				num2 = input.nextFloat();
+				complex_op object5 = new complex_op(num1,num2);
+				System.out.println("Enter Second Number :");
+				num1 = input.nextFloat();
+				num2 = input.nextFloat();
+				complex_op object6 = new complex_op(num1,num2);
+				cal.Multiplication(object5,object6);
 				break;
 			case 4:
-				cal.Division(object1,object2);
+				System.out.println("Enter First Number :");
+				num1 = input.nextFloat();
+				num2 = input.nextFloat();
+				complex_op object7 = new complex_op(num1,num2);
+				System.out.println("Enter Second Number :");
+				num1 = input.nextFloat();
+				num2 = input.nextFloat();
+				complex_op object8 = new complex_op(num1,num2);
+				cal.Division(object7,object8);
 				break;
 			}
 		}while(choice!=5);
 		input.close();
-		
 	}
 }
 	class complex_op{
@@ -72,9 +96,10 @@ public class complex {
 	    }
 	    public void Division(complex_op C1,complex_op C2) {
 	    	float real,imag;
-	    	real = (C1.real*C2.real) + (C1.imag*C2.imag) / (C2.real*C2.real)+(C2.imag*C2.imag);
-	    	imag = (C1.imag*C2.real) - (C1.real*C2.imag) / (C2.real*C2.real)+(C2.imag*C2.imag);
+	    	real = ((C1.real*C2.real) + (C1.imag*C2.imag)) / ((C2.real*C2.real)+(C2.imag*C2.imag));
+	    	imag = ((C1.imag*C2.real) - (C1.real*C2.imag)) / ((C2.real*C2.real)+(C2.imag*C2.imag));
             System.out.println("Division : ("+real+")+("+imag+")i");
 	    }
 	}
+
 
